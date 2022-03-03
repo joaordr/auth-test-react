@@ -32,4 +32,17 @@ export default NextAuth({
         })
         // ...add more providers here
     ],
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+            return true;
+        },
+
+        async session({ session, user, token }) {
+            return session;
+        },
+        async jwt({ token, user, account, profile, isNewUser }) {
+            console.log(token);
+            return token
+        }
+    }
 })
