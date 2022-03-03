@@ -20,6 +20,8 @@ export default function Home() {
       <div className={styles.others}>
         <button type="button" className={styles.github} onClick={() => signIn('github')}>Github</button>
         <button type="button" className={styles.google} onClick={() => signIn('google')}>Google</button>
+        <button type="button" className={styles.facebook} onClick={() => signIn('facebook')}>Facebook</button>
+
       </div>
       <button type="button" onClick={() => signOut()}>Sair</button>
 

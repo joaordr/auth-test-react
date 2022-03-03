@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-
+import FacebookProvider from "next-auth/providers/facebook";
 
 export default NextAuth({
     secret: process.env.OAUTH_SECRET,
@@ -25,6 +25,10 @@ export default NextAuth({
                     response_type: "code"
                 }
             }
+        }),
+        FacebookProvider({
+            clientId: process.env.FACEBOOK_ID,
+            clientSecret: process.env.FACEBOOK_SECRET
         })
         // ...add more providers here
     ],
