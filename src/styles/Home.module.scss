@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem;
+
+    div {
+        padding-bottom: 2rem;
+    }
+
+    .simple {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                margin-bottom: 1rem;
+            }
+
+        }
+    }
+
+    .others {
+        font-size: 1rem;
+        padding: 6px 10px;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            margin-bottom: 1rem;
+        }
+
+        .github {
+            background: blueviolet;
+            color: white;
+        }
+
+        .google {
+            background: green;
+            color: white;
+
+        }
+    }
+
+
+}
