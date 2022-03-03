@@ -1,18 +1,31 @@
+
+import { useState } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   const { data: session } = useSession();
+  const [email, setEmail] = useState('desafio@ioasys.com.br');
+  const [password, setPassword] = useState('12341234');
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const data = {
+      email,
+      password,
+    }
+
+  }
 
   console.log(session);
 
   return (
     <div className={styles.container}>
       <div className={styles.simple}>
-        <form>
-          <input type="text" placeholder='email' />
-          <input type="password" placeholder="Password" />
+        <form onSubmit={handleSubmit}>
+          <input name="email" type="text" id="email" value={email} onChange={e => setEmail(e.target.value)} placeholder='email' />
+          <input name="password" type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} placeholder="Password" />
           <button type="submit">Entrar</button>
         </form>
       </div>
