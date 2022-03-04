@@ -11,10 +11,8 @@ export default function Home() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const data = {
-      email,
-      password,
-    }
+    const res = await signIn('credentials');
+    console.log(res);
 
   }
 
